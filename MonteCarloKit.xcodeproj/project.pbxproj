@@ -8,12 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		177FCD84223A8FCA00034560 /* MonteCarloKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD82223A8FCA00034560 /* MonteCarloKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		177FCD94223A919200034560 /* MCTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD8B223A919200034560 /* MCTreeNode.h */; };
+		177FCD95223A919200034560 /* MCTS.m in Sources */ = {isa = PBXBuildFile; fileRef = 177FCD8C223A919200034560 /* MCTS.m */; };
+		177FCD96223A919200034560 /* MCTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 177FCD8D223A919200034560 /* MCTreeNode.m */; };
+		177FCD97223A919200034560 /* MCTreeEdge.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD8E223A919200034560 /* MCTreeEdge.h */; };
+		177FCD9A223A919200034560 /* MCTS.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD91223A919200034560 /* MCTS.h */; };
+		177FCD9B223A919200034560 /* MCTreeEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 177FCD92223A919200034560 /* MCTreeEdge.m */; };
+		177FCD9D223A9B0E00034560 /* MCStateDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD9C223A9B0E00034560 /* MCStateDelegate.h */; };
+		177FCDA0223A9E4400034560 /* MCState.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD9E223A9E4400034560 /* MCState.h */; };
+		177FCDA1223A9E4400034560 /* MCState.m in Sources */ = {isa = PBXBuildFile; fileRef = 177FCD9F223A9E4400034560 /* MCState.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		177FCD7F223A8FCA00034560 /* MonteCarloKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MonteCarloKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		177FCD82223A8FCA00034560 /* MonteCarloKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonteCarloKit.h; sourceTree = "<group>"; };
 		177FCD83223A8FCA00034560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		177FCD8B223A919200034560 /* MCTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTreeNode.h; sourceTree = "<group>"; };
+		177FCD8C223A919200034560 /* MCTS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTS.m; sourceTree = "<group>"; };
+		177FCD8D223A919200034560 /* MCTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTreeNode.m; sourceTree = "<group>"; };
+		177FCD8E223A919200034560 /* MCTreeEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTreeEdge.h; sourceTree = "<group>"; };
+		177FCD91223A919200034560 /* MCTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTS.h; sourceTree = "<group>"; };
+		177FCD92223A919200034560 /* MCTreeEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTreeEdge.m; sourceTree = "<group>"; };
+		177FCD9C223A9B0E00034560 /* MCStateDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCStateDelegate.h; sourceTree = "<group>"; };
+		177FCD9E223A9E4400034560 /* MCState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCState.h; sourceTree = "<group>"; };
+		177FCD9F223A9E4400034560 /* MCState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCState.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +64,17 @@
 		177FCD81223A8FCA00034560 /* MonteCarloKit */ = {
 			isa = PBXGroup;
 			children = (
+				177FCD91223A919200034560 /* MCTS.h */,
+				177FCD8C223A919200034560 /* MCTS.m */,
+				177FCD8E223A919200034560 /* MCTreeEdge.h */,
+				177FCD92223A919200034560 /* MCTreeEdge.m */,
+				177FCD8B223A919200034560 /* MCTreeNode.h */,
+				177FCD8D223A919200034560 /* MCTreeNode.m */,
 				177FCD82223A8FCA00034560 /* MonteCarloKit.h */,
 				177FCD83223A8FCA00034560 /* Info.plist */,
+				177FCD9C223A9B0E00034560 /* MCStateDelegate.h */,
+				177FCD9E223A9E4400034560 /* MCState.h */,
+				177FCD9F223A9E4400034560 /* MCState.m */,
 			);
 			path = MonteCarloKit;
 			sourceTree = "<group>";
@@ -60,6 +87,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				177FCD84223A8FCA00034560 /* MonteCarloKit.h in Headers */,
+				177FCD9A223A919200034560 /* MCTS.h in Headers */,
+				177FCD94223A919200034560 /* MCTreeNode.h in Headers */,
+				177FCDA0223A9E4400034560 /* MCState.h in Headers */,
+				177FCD97223A919200034560 /* MCTreeEdge.h in Headers */,
+				177FCD9D223A9B0E00034560 /* MCStateDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177FCDA1223A9E4400034560 /* MCState.m in Sources */,
+				177FCD96223A919200034560 /* MCTreeNode.m in Sources */,
+				177FCD95223A919200034560 /* MCTS.m in Sources */,
+				177FCD9B223A919200034560 /* MCTreeEdge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
