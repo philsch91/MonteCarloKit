@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MCTS : NSObject
 
-//-(instancetype)init:(PSTreeNode *)startNode end:(PSTreeNode *)endNode;
 -(instancetype)init:(MCTreeNode *)startNode end:(MCTreeNode *)endNode simulationCount:(NSUInteger)maxSimCount;
 
 -(MCTreeNode *)selection:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes;
@@ -23,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSMutableArray<MCTreeNode *>*)expansion:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes;
 -(MCTreeNode *)simulation:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth lastNodes:(NSArray *)lastNodes;
 
-//-(PSTreeNode *)main:(PSTreeNode *)rootnode;
 -(void)main;
 //-(double)uct:(double)numerator denominator:(double)denominator;
 -(double)uct:(double)numerator denominator:(double)denominator parentDenominator:(double)pd;

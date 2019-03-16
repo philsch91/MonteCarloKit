@@ -1,0 +1,6 @@
+framework module MonteCarloKit {
+  umbrella header "MonteCarloKit.h"
+
+  export *
+  module * { export * }
+}

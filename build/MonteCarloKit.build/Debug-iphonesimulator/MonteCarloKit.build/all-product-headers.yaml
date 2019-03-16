@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/philipp/Library/Developer/Xcode/DerivedData/MonteCarloKit-eorohfiyomwjhcgmkkuyduzseenf/Build/Products/Debug-iphonesimulator/MonteCarloKit.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "MonteCarloKit-Swift.h",
+          'external-contents': "/Users/philipp/Library/Developer/Xcode/DerivedData/MonteCarloKit-eorohfiyomwjhcgmkkuyduzseenf/Build/Products/Debug-iphonesimulator/MonteCarloKit.framework/Headers/MonteCarloKit-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "MonteCarloKit.h",
+          'external-contents': "/Users/philipp/Documents/Projekte/MonteCarloKit/MonteCarloKit/MonteCarloKit.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/philipp/Library/Developer/Xcode/DerivedData/MonteCarloKit-eorohfiyomwjhcgmkkuyduzseenf/Build/Products/Debug-iphonesimulator/MonteCarloKit.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/philipp/Documents/Projekte/MonteCarloKit/build/MonteCarloKit.build/Debug-iphonesimulator/MonteCarloKit.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
