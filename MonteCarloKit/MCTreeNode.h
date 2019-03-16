@@ -11,15 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MCTreeNode : MCState
+@interface MCTreeNode : MCState <NSCopying>
 
 //@property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSString *nid;
-//@property (nonatomic,assign) double latitude;
-//@property (nonatomic,assign) double longitude;
-
 @property (nonatomic,strong) MCTreeNode *parentNode;
-
 @property (nonatomic,strong) NSMutableArray<MCTreeNode *> *nodes;
 
 -(NSMutableArray<MCTreeNode *> *)addNode:(MCTreeNode *)node;

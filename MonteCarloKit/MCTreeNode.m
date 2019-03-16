@@ -47,6 +47,16 @@
     }
     return _nodes;
 }
+
+- (id)copyWithZone:(NSZone *)zone{
+    MCTreeNode *node = [super copyWithZone:zone];
+    node.nid = [NSString stringWithString:_nid];
+    node.parentNode = [_parentNode copyWithZone:zone];
+    node.nodes = [[NSMutableArray alloc] initWithArray:_nodes copyItems:YES];
+    
+    return node;
+}
+
 /*
 #pragma mark - IGListDiffable
 
