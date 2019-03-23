@@ -50,9 +50,9 @@
 
 - (id)copyWithZone:(NSZone *)zone{
     MCTreeNode *node = [super copyWithZone:zone];
-    node.nid = [NSString stringWithString:_nid];
-    node.parentNode = [_parentNode copyWithZone:zone];
-    node.nodes = [[NSMutableArray alloc] initWithArray:_nodes copyItems:YES];
+    node->_nid = [NSString stringWithString:_nid];
+    node->_parentNode = [_parentNode copyWithZone:zone];
+    node->_nodes = [[NSMutableArray alloc] initWithArray:_nodes copyItems:YES];
     
     return node;
 }
