@@ -22,14 +22,14 @@
 
 /* Begin PBXBuildFile section */
 		177FCD84223A8FCA00034560 /* MonteCarloKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD82223A8FCA00034560 /* MonteCarloKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		177FCD94223A919200034560 /* MCTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD8B223A919200034560 /* MCTreeNode.h */; };
+		177FCD94223A919200034560 /* MCTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD8B223A919200034560 /* MCTreeNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		177FCD95223A919200034560 /* MCTS.m in Sources */ = {isa = PBXBuildFile; fileRef = 177FCD8C223A919200034560 /* MCTS.m */; };
 		177FCD96223A919200034560 /* MCTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 177FCD8D223A919200034560 /* MCTreeNode.m */; };
-		177FCD97223A919200034560 /* MCTreeEdge.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD8E223A919200034560 /* MCTreeEdge.h */; };
-		177FCD9A223A919200034560 /* MCTS.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD91223A919200034560 /* MCTS.h */; };
+		177FCD97223A919200034560 /* MCTreeEdge.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD8E223A919200034560 /* MCTreeEdge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		177FCD9A223A919200034560 /* MCTS.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD91223A919200034560 /* MCTS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		177FCD9B223A919200034560 /* MCTreeEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 177FCD92223A919200034560 /* MCTreeEdge.m */; };
-		177FCD9D223A9B0E00034560 /* MCStateDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD9C223A9B0E00034560 /* MCStateDelegate.h */; };
-		177FCDA0223A9E4400034560 /* MCState.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD9E223A9E4400034560 /* MCState.h */; };
+		177FCD9D223A9B0E00034560 /* MCStateDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD9C223A9B0E00034560 /* MCStateDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		177FCDA0223A9E4400034560 /* MCState.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD9E223A9E4400034560 /* MCState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		177FCDA1223A9E4400034560 /* MCState.m in Sources */ = {isa = PBXBuildFile; fileRef = 177FCD9F223A9E4400034560 /* MCState.m */; };
 /* End PBXBuildFile section */
 

@@ -8,6 +8,31 @@
       'contents': [
         {
           'type': 'file',
+          'name': "MCState.h",
+          'external-contents': "/Users/philipp/Documents/Projekte/MonteCarloKit/MonteCarloKit/MCState.h"
+        },
+        {
+          'type': 'file',
+          'name': "MCStateDelegate.h",
+          'external-contents': "/Users/philipp/Documents/Projekte/MonteCarloKit/MonteCarloKit/MCStateDelegate.h"
+        },
+        {
+          'type': 'file',
+          'name': "MCTS.h",
+          'external-contents': "/Users/philipp/Documents/Projekte/MonteCarloKit/MonteCarloKit/MCTS.h"
+        },
+        {
+          'type': 'file',
+          'name': "MCTreeEdge.h",
+          'external-contents': "/Users/philipp/Documents/Projekte/MonteCarloKit/MonteCarloKit/MCTreeEdge.h"
+        },
+        {
+          'type': 'file',
+          'name': "MCTreeNode.h",
+          'external-contents': "/Users/philipp/Documents/Projekte/MonteCarloKit/MonteCarloKit/MCTreeNode.h"
+        },
+        {
+          'type': 'file',
           'name': "MonteCarloKit-Swift.h",
           'external-contents': "/Users/philipp/Library/Developer/Xcode/DerivedData/MonteCarloKit-eorohfiyomwjhcgmkkuyduzseenf/Build/Products/Debug-iphonesimulator/MonteCarloKit.framework/Headers/MonteCarloKit-Swift.h"
         },
