@@ -23,11 +23,6 @@
         },
         {
           'type': 'file',
-          'name': "MCTreeEdge.h",
-          'external-contents': "/Users/philipp/Documents/Projekte/MonteCarloKit/MonteCarloKit/MCTreeEdge.h"
-        },
-        {
-          'type': 'file',
           'name': "MCTreeNode.h",
           'external-contents': "/Users/philipp/Documents/Projekte/MonteCarloKit/MonteCarloKit/MCTreeNode.h"
         },

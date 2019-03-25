@@ -1,57 +1,50 @@
 //
-//  Test.m
-//  MCTSNav
+//  MCDiffTreeNode.m
+//  MonteCarloKit
 //
-//  Created by Philipp Schunker on 17.10.18.
-//  Copyright © 2018 Philipp Schunker. All rights reserved.
+//  Created by Philipp Schunker on 25.03.19.
+//  Copyright © 2019 Philipp Schunker. All rights reserved.
 //
 
-#import "MCTreeEdge.h"
+#import "MCDiffTreeNode.h"
 
-@implementation MCTreeEdge
-
-@dynamic name;
-@dynamic idFrom;
-@dynamic idTo;
-
-- (instancetype)init{
-    self = [super init];
-    return self;
-}
+@implementation MCDiffTreeNode
 
 #pragma mark - IGListDiffable
-
+ 
 - (nonnull id<NSObject>)diffIdentifier {
-    //return self.key;
     //return self;
-    return self.name;
+    return self.nid;
 }
-
+ 
 #pragma mark - IGListDiffable and IGListSectionController
-
+ 
 - (BOOL)isEqualToDiffableObject:(id)object {
     //the quickest way to get started with diffable models is use the object itself as the identifier, and use the superclass’s -[NSObject isEqual:] implementation for equality
     //return [self isEqual:object];     //override NSObject methods
-    
+ 
     if(object == self){
         return YES;
     }
-    
-    if(![object isKindOfClass:[MCTreeEdge class]]){
+ 
+    if(![object isKindOfClass:[MCTreeNode class]]){
         return NO;
     }
-    
-    MCTreeEdge *edge = object;
-    
-    return [self.name isEqualToString:edge.name];
+ 
+    MCTreeNode *node = object;
+ 
+    return [self.nid isEqualToString:node.nid]
+        && self.parentNode == node.parentNode
+        && [self.nodes isEqual:node.nodes];
 }
 
-#pragma mark - IGListDiffable and IGListBindingSectionController
 /*
- - (BOOL)isEqualToDiffableObject:(id)object {
+#pragma mark - IGListDiffable and IGListBindingSectionController
+ 
+- (BOOL)isEqualToDiffableObject:(id)object {
  //if two models have the same diffIdentifier, they must be equal (isEqalToDiffableObject must return true) so that the section controller can then compare view models
- return true;
- }
- */
+    return true;
+}
+*/
 
 @end

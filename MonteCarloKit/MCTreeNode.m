@@ -58,48 +58,6 @@
 }
 
 /*
-#pragma mark - IGListDiffable
-
-- (nonnull id<NSObject>)diffIdentifier {
-    //return self.key;
-    //return self;
-    //return self.name;
-    return self.nid;
-}
-
-#pragma mark - IGListDiffable and IGListSectionController
-
-- (BOOL)isEqualToDiffableObject:(id)object {
-    //the quickest way to get started with diffable models is use the object itself as the identifier, and use the superclass’s -[NSObject isEqual:] implementation for equality
-    //return [self isEqual:object];     //override NSObject methods
-    
-    if(object == self){
-        return YES;
-    }
-    
-    if(![object isKindOfClass:[MCTreeNode class]]){
-        return NO;
-    }
-    
-    MCTreeNode *node = object;
-    
-    //return [self.name isEqualToString:node.name]
-    return [self.nid isEqualToString:node.nid]
-        && self.latitude == self.latitude
-        && self.longitude == self.longitude;
-}
-*/
-
-/*
-#pragma mark - IGListDiffable and IGListBindingSectionController
-
- - (BOOL)isEqualToDiffableObject:(id)object {
- //if two models have the same diffIdentifier, they must be equal (isEqalToDiffableObject must return true) so that the section controller can then compare view models
- return true;
- }
- */
-
-/*
 -(NSString *)name{
     if(!_name){
         _name = [[NSString alloc] initWithString:@""];
