@@ -8,6 +8,11 @@
       'contents': [
         {
           'type': 'file',
+          'name': "MCDiffTreeNode.h",
+          'external-contents': "/Users/philipp/Documents/Projekte/MonteCarloKit/MonteCarloKit/MCDiffTreeNode.h"
+        },
+        {
+          'type': 'file',
           'name': "MCState.h",
           'external-contents': "/Users/philipp/Documents/Projekte/MonteCarloKit/MonteCarloKit/MCState.h"
         },

@@ -18,7 +18,7 @@ FOUNDATION_EXPORT const unsigned char MonteCarloKitVersionString[];
 
 #import <MonteCarloKit/MCState.h>
 #import <MonteCarloKit/MCTreeNode.h>
-#import <MonteCarloKit/MCTreeEdge.h>
+#import <MonteCarloKit/MCDiffTreeNode.h>
 #import <MonteCarloKit/MCTS.h>
 #import <MonteCarloKit/MCStateDelegate.h>
 

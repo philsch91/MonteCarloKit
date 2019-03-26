@@ -21,7 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		174BD97F224972C600C7D48A /* MCDiffTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 174BD97D224972C600C7D48A /* MCDiffTreeNode.h */; };
+		174BD97F224972C600C7D48A /* MCDiffTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 174BD97D224972C600C7D48A /* MCDiffTreeNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		174BD980224972C600C7D48A /* MCDiffTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BD97E224972C600C7D48A /* MCDiffTreeNode.m */; };
 		177FCD84223A8FCA00034560 /* MonteCarloKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD82223A8FCA00034560 /* MonteCarloKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		177FCD94223A919200034560 /* MCTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD8B223A919200034560 /* MCTreeNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,10 +101,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				177FCD84223A8FCA00034560 /* MonteCarloKit.h in Headers */,
-				174BD97F224972C600C7D48A /* MCDiffTreeNode.h in Headers */,
 				177FCD9A223A919200034560 /* MCTS.h in Headers */,
 				177FCD94223A919200034560 /* MCTreeNode.h in Headers */,
 				177FCDA0223A9E4400034560 /* MCState.h in Headers */,
+				174BD97F224972C600C7D48A /* MCDiffTreeNode.h in Headers */,
 				177FCD9D223A9B0E00034560 /* MCStateDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
