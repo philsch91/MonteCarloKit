@@ -38,7 +38,8 @@
     return stateCopy;
 }
 
--(double)compareToState:(MCState *)state{
+//override in subclass
+- (double)compareToState:(MCState *)state{
     return 0;
 }
 

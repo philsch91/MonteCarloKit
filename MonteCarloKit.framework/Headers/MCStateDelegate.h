@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required
 
--(NSArray<MCTreeNode *> *)getStateUpdatesForNode:(MCTreeNode *)node level:(NSUInteger)level;
+- (NSArray<MCTreeNode *> *)getStateUpdatesForNode:(MCTreeNode *)node level:(NSUInteger)level;
+- (double)evaluate:(MCTreeNode *)currentNode withNode:(MCTreeNode *)simNode;
 
 @end
 

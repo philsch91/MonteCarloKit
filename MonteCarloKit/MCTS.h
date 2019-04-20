@@ -15,21 +15,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MCTS : NSObject
 
--(instancetype)init:(MCTreeNode *)startNode end:(MCTreeNode *)endNode simulationCount:(NSUInteger)maxSimCount;
+-(instancetype)init:(MCTreeNode *)startNode simulationCount:(NSUInteger)maxSimCount;
+
+//-(double)uct:(double)numerator denominator:(double)denominator;
+-(double)uct:(double)numerator denominator:(double)denominator parentDenominator:(double)pd;
+
+-(MCTreeNode *)expand:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth lastNodes:(NSArray *)lastNodes;
 
 -(MCTreeNode *)selection:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes;
+
 //-(NSMutableArray<PSTreeNode *>*)expansion:(PSTreeNode *)node;
 -(NSMutableArray<MCTreeNode *>*)expansion:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes;
+
 -(MCTreeNode *)simulation:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth lastNodes:(NSArray *)lastNodes;
 
 -(void)main;
-//-(double)uct:(double)numerator denominator:(double)denominator;
--(double)uct:(double)numerator denominator:(double)denominator parentDenominator:(double)pd;
--(MCTreeNode *)expand:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth lastNodes:(NSArray *)lastNodes;
+
 -(void)setStopFlagPointer:(BOOL *)val;
 
 @property (nonatomic,strong) MCTreeNode *startNode;
-@property (nonatomic,strong) MCTreeNode *endNode;
+//@property (nonatomic,strong) MCTreeNode *endNode;
+@property (nonatomic,assign) NSUInteger simDepth;
 @property (nonatomic,assign) NSUInteger simCount;
 @property (nonatomic,assign) NSUInteger maxSimCount;
 @property (nonatomic,assign) double explorationCoefficient;

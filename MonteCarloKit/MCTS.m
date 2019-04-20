@@ -24,11 +24,11 @@
     return self;
 }*/
 
-- (instancetype)init:(MCTreeNode *)startNode end:(MCTreeNode *)endNode simulationCount:(NSUInteger)maxSimCount{
+- (instancetype)init:(MCTreeNode *)startNode simulationCount:(NSUInteger)maxSimCount{
     self = [super init];
     if(self){
         self.startNode = startNode;
-        self.endNode = endNode;
+        self.simDepth = INFINITY;
         self.maxSimCount = maxSimCount;
         
         self.explorationCoefficient = 2;
@@ -66,20 +66,20 @@
         }*/
         
         /*
-         BOOL c = NO;
-         for(PSTreeNode *n in lastNodes){
-         if([n.nid isEqualToString:cnode.nid]){
-         NSLog(@"%@",n);
-         NSLog(@"%@",cnode);
-         c = YES;
-         }
-         }
+        BOOL c = NO;
+        for(PSTreeNode *n in lastNodes){
+            if([n.nid isEqualToString:cnode.nid]){
+                NSLog(@"%@",n);
+                NSLog(@"%@",cnode);
+                c = YES;
+            }
+        }
          
-         if(c){
-         //NSLog(@"containsobject");
-         continue;
-         }
-         */
+        if(c){
+            //NSLog(@"containsobject");
+            continue;
+        }
+        */
         
         if((depth+1)<maxdepth){
             [visitedNodes addObject:cnode];
@@ -205,8 +205,11 @@
     
     NSUInteger depth = 0;
     while(depth < maxdepth){
+        NSUInteger oldNodeCount = [node.nodes count];
         node = [self expand:node maxdepth:0 depth:0 lastNodes:lastNodes];
-        if([node.nodes count] == 0){
+        NSUInteger newNodeCount = [node.nodes count];
+        
+        if((newNodeCount == 0) || (newNodeCount == oldNodeCount)){
             return node;
         }
         
@@ -260,13 +263,11 @@
     //expand root node first
     
     //double initVal = [self.startLocation distanceFromLocation:self.endLocation];
-    double initVal = [self.startNode compareToState:self.endNode];
-    double bestVal = initVal;
-    double *pBestVal = &bestVal;
-    //double bestVal2 = DBL_MAX;     //new
-    //double bestVal3 = 0;
-    //double bestVal4 = 0;
-    NSLog(@"initial value: %g m",initVal);
+    //double initVal = [self.startNode compareToState:self.endNode];
+    //double bestVal = initVal;
+    //double *pBestVal = &bestVal;
+
+    //NSLog(@"initial value: %g m",initVal);
     
     self.simCount = 0;
     while(self.simCount<self.maxSimCount && !(*self.pStopFlag)){
@@ -297,13 +298,13 @@
         
         MCTreeNode *copyNode = [currentNode copy];
         
-        //PSTreeNode *destinationNode = [self simulation:copyNode maxdepth:3 depth:0 lastNodes:[NSMutableArray array]];
-        MCTreeNode *destinationNode = [self simulation:copyNode maxdepth:3];
+        //PSTreeNode *simNode = [self simulation:copyNode maxdepth:self.simDepth depth:0 lastNodes:[NSMutableArray array]];
+        MCTreeNode *simNode = [self simulation:copyNode maxdepth:self.simDepth];
         //==========
         
         //===== evaluation =====
-        //double numerator = [self evaluate:destinationNode fromCurrentNode:currentNode withInitVal:initVal AndBestVal:pBestVal];
-        double numerator = [self evaluate:currentNode toNode:destinationNode withInitValue:initVal AndBestValue:pBestVal];
+        //double numerator = [self evaluate:currentNode toNode:simNode withInitValue:initVal AndBestValue:pBestVal];
+        double numerator = [self.stateDelegate evaluate:currentNode withNode:simNode];
         //==========
         
         //===== backpropagation =====
