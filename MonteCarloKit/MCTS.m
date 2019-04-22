@@ -28,6 +28,7 @@
     self = [super init];
     if(self){
         self.startNode = startNode;
+        
         self.simDepth = INFINITY;
         self.maxSimCount = maxSimCount;
         
@@ -42,28 +43,25 @@
 }
 
 -(MCTreeNode *)expand:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth lastNodes:(NSArray *)lastNodes{
-    //NSLog(@"expand %@ level: %ld",node.nid,depth);
+    if(self.debug){
+        NSLog(@"expand %@",node.nid);
+    }
     
     NSMutableArray *visitedNodes = [lastNodes mutableCopy];
     
-    //PSTreeManager *treeManager = [[PSTreeManager alloc] init];
-    //NSArray<PSTreeNode *> *childNodes = [treeManager getChildNodesForNode:node level:0];
-    NSArray<MCTreeNode *> *childNodes = [self.stateDelegate getStateUpdatesForNode:node level:0];
-    //NSUInteger ix = 0;
-    //for(PSTreeNode *node in childNodes){
+    NSArray<MCTreeNode *> *childNodes = [self.stateDelegate getStateUpdatesForNode:node depth:depth];
+    
     for(NSUInteger ix=0;ix<[childNodes count];ix++){
         MCTreeNode *cnode = childNodes[ix];
         //NSLog(@"%ld %@",ix,cnode.nid);
         
         //prevent node recursion in recursive [expand:] calls
         if([lastNodes containsObject:cnode]){
-            //NSLog(@"containsobject");
+            if(self.debug){
+                NSLog(@"containsobject");
+            }
             continue;
         }
-        /*
-        if([[treeManager getChildNodesForNode:cnode level:0] count] == 1){
-            continue;
-        }*/
         
         /*
         BOOL c = NO;
@@ -91,7 +89,6 @@
         
         cnode.parentNode = node;
         [node addNode:cnode];
-        //ix++;
     }
     
     return node;
@@ -182,19 +179,11 @@
 
 -(NSMutableArray<MCTreeNode *>*)expansion:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes{
     MCTreeNode *expNode = [self expand:node maxdepth:0 depth:0 lastNodes:pnodes];
-    //[node.nodes addObjectsFromArray:expNode.nodes];
-    //PSTreeNode *newNode = [[PSTreeNode alloc] init];
     /*
-    if([node.nodes count] >0){
-        //return node.nodes;
-        return
-    }
-    */
-    
     if ([expNode.nodes count] == 0) {
         return nil;
     }
-    
+    */
     return expNode.nodes;
 }
 
@@ -206,7 +195,7 @@
     NSUInteger depth = 0;
     while(depth < maxdepth){
         NSUInteger oldNodeCount = [node.nodes count];
-        node = [self expand:node maxdepth:0 depth:0 lastNodes:lastNodes];
+        node = [self expand:node maxdepth:maxdepth depth:depth lastNodes:lastNodes];
         NSUInteger newNodeCount = [node.nodes count];
         
         if((newNodeCount == 0) || (newNodeCount == oldNodeCount)){
@@ -292,8 +281,6 @@
         /*
         MCTreeNode *copyNode = [[MCTreeNode alloc] init];
         copyNode.nid = [NSString stringWithString:currentNode.nid];
-        copyNode.latitude = currentNode.latitude;
-        copyNode.longitude = currentNode.longitude;
         */
         
         MCTreeNode *copyNode = [currentNode copy];

@@ -24,7 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(MCTreeNode *)selection:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes;
 
-//-(NSMutableArray<PSTreeNode *>*)expansion:(PSTreeNode *)node;
 -(NSMutableArray<MCTreeNode *>*)expansion:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes;
 
 -(MCTreeNode *)simulation:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth lastNodes:(NSArray *)lastNodes;
@@ -34,7 +33,6 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)setStopFlagPointer:(BOOL *)val;
 
 @property (nonatomic,strong) MCTreeNode *startNode;
-//@property (nonatomic,strong) MCTreeNode *endNode;
 @property (nonatomic,assign) NSUInteger simDepth;
 @property (nonatomic,assign) NSUInteger simCount;
 @property (nonatomic,assign) NSUInteger maxSimCount;
@@ -42,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) double exploitationCoefficient;
 @property (nonatomic,assign) BOOL *pStopFlag;
 @property (nonatomic,strong) id<MCStateDelegate> stateDelegate;
+@property (nonatomic,assign) BOOL debug;
 
 @end
 
