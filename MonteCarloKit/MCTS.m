@@ -200,7 +200,7 @@
     NSUInteger depth = 0;
     while(depth < maxdepth){
         NSUInteger oldNodeCount = [node.nodes count];
-        node = [self expand:node maxdepth:0 depth:0 lastNodes:lastNodes];
+        node = [self expand:node maxdepth:0 depth:depth lastNodes:lastNodes];
         NSUInteger newNodeCount = [node.nodes count];
         
         if((newNodeCount == 0) || (newNodeCount == oldNodeCount)){
