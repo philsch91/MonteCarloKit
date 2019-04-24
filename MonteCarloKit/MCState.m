@@ -10,7 +10,7 @@
 
 @implementation MCState
 
-- (instancetype)init{
+-(instancetype)init{
     self = [super init];
     if(self){
         //_numerator = [[NSNumber alloc] initWithInt:0];
@@ -22,7 +22,9 @@
     return self;
 }
 
-- (id)copyWithZone:(NSZone *)zone{
+#pragma mark - NSCopying
+
+-(id)copyWithZone:(NSZone *)zone{
     /*
      * NSObject does not itself support the NSCopying protocol.
      * Subclasses must support the protocol and implement the copyWithZone: method.
@@ -39,7 +41,7 @@
 }
 
 //override in subclass
-- (double)compareToState:(MCState *)state{
+-(double)compareToState:(MCState *)state{
     return 0;
 }
 

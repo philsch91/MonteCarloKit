@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MCDiffTreeNode : MCTreeNode
 
-- (nonnull id<NSObject>)diffIdentifier;
-- (BOOL)isEqualToDiffableObject:(id)object;
+-(nonnull id<NSObject>)diffIdentifier;
+-(BOOL)isEqualToDiffableObject:(id)object;
 
 @end
 

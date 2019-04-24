@@ -12,14 +12,14 @@
 
 #pragma mark - IGListDiffable
  
-- (nonnull id<NSObject>)diffIdentifier {
+-(nonnull id<NSObject>)diffIdentifier {
     //return self;
     return self.nid;
 }
  
 #pragma mark - IGListDiffable and IGListSectionController
  
-- (BOOL)isEqualToDiffableObject:(id)object {
+-(BOOL)isEqualToDiffableObject:(id)object {
     //the quickest way to get started with diffable models is use the object itself as the identifier, and use the superclass’s -[NSObject isEqual:] implementation for equality
     //return [self isEqual:object];     //override NSObject methods
  

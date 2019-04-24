@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) double numerator;
 @property (nonatomic,assign) double denominator;
 
-- (double)compareToState:(MCState *)state;
+-(double)compareToState:(MCState *)state;
 
 @end
 

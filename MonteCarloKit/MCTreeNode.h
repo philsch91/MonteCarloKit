@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) MCTreeNode *parentNode;
 @property (nonatomic,strong) NSMutableArray<MCTreeNode *> *nodes;
 
-- (NSMutableArray<MCTreeNode *> *)addNode:(MCTreeNode *)node;
+-(NSMutableArray<MCTreeNode *> *)addNode:(MCTreeNode *)node;
 
 @end
 

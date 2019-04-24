@@ -19,12 +19,12 @@
 @implementation MCTS
 
 /*
-- (instancetype)init{
+-(instancetype)init{
     self = [super init];
     return self;
 }*/
 
-- (instancetype)init:(MCTreeNode *)startNode simulationCount:(NSUInteger)maxSimCount{
+-(instancetype)init:(MCTreeNode *)startNode simulationCount:(NSUInteger)maxSimCount{
     self = [super init];
     if(self){
         self.startNode = startNode;
@@ -58,7 +58,7 @@
         //prevent node recursion in recursive [expand:] calls
         if([lastNodes containsObject:cnode]){
             if(self.debug){
-                NSLog(@"containsobject");
+                NSLog(@"lastNodes containsObject: %@",cnode.nid);
             }
             continue;
         }
@@ -123,7 +123,11 @@
 -(MCTreeNode *)selection:(MCTreeNode *)node prevNodes:(NSMutableArray*)pnodes{
     MCTreeNode *nextNode = node;
     MCTreeNode *parentNode = node;
-    //NSLog(@"selection %@",nextNode.nid);
+    
+    if(self.debug){
+        NSLog(@"selection %@",nextNode.nid);
+    }
+    
     [pnodes addObject:nextNode];    //important
     
     NSUInteger i = 0;
@@ -174,6 +178,7 @@
     }
     
     NSLog(@"selection end %@ %ld",nextNode.nid,i);
+    
     return nextNode;
 }
 
@@ -195,7 +200,7 @@
     NSUInteger depth = 0;
     while(depth < maxdepth){
         NSUInteger oldNodeCount = [node.nodes count];
-        node = [self expand:node maxdepth:maxdepth depth:depth lastNodes:lastNodes];
+        node = [self expand:node maxdepth:0 depth:0 lastNodes:lastNodes];
         NSUInteger newNodeCount = [node.nodes count];
         
         if((newNodeCount == 0) || (newNodeCount == oldNodeCount)){

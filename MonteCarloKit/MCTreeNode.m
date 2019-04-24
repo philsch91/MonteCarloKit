@@ -10,16 +10,11 @@
 
 @implementation MCTreeNode
 
-- (instancetype)init{
+#pragma mark - NSObject
+
+-(instancetype)init{
     self = [super init];
     return self;
-}
-
-#pragma mark - public methods
-
--(NSMutableArray<MCTreeNode *> *)addNode:(MCTreeNode *)node{
-    [self.nodes addObject:node];
-    return self.nodes;
 }
 
 -(NSUInteger)hash{
@@ -48,7 +43,16 @@
     return _nodes;
 }
 
-- (id)copyWithZone:(NSZone *)zone{
+#pragma mark - public methods
+
+-(NSMutableArray<MCTreeNode *> *)addNode:(MCTreeNode *)node{
+    [self.nodes addObject:node];
+    return self.nodes;
+}
+
+#pragma mark - NSCopying
+
+-(id)copyWithZone:(NSZone *)zone{
     MCTreeNode *node = [super copyWithZone:zone];
     node->_nid = [NSString stringWithString:_nid];
     node->_parentNode = [_parentNode copyWithZone:zone];
