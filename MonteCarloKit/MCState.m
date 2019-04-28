@@ -12,14 +12,26 @@
 
 -(instancetype)init{
     self = [super init];
-    if(self){
-        //_numerator = [[NSNumber alloc] initWithInt:0];
-        //_denominator = [[NSNumber alloc] initWithInt:0];
-        _numerator = 0;
-        _denominator = 0;
+    
+    if(!self){
+        return nil;
     }
-
+    
+    //_numerator = [[NSNumber alloc] initWithInt:0];
+    //_denominator = [[NSNumber alloc] initWithInt:0];
+    _numerator = 0;
+    _denominator = 0;
     return self;
+}
+
+#pragma mark - NSObject
+
+-(NSString *)description{
+    NSMutableString *descStr = [NSMutableString stringWithFormat:@"<%@:%p",[self class],self];
+    [descStr appendFormat:@" numerator = %g",self.numerator];
+    [descStr appendFormat:@" denominator = %g",self.denominator];
+    [descStr appendFormat:@">"];
+    return [descStr copy];
 }
 
 #pragma mark - NSCopying
@@ -36,7 +48,6 @@
     //stateCopy.denominator = [[NSNumber alloc] initWithDouble:[self.denominator doubleValue]];
     stateCopy.numerator = self.numerator;
     stateCopy.denominator = self.numerator;
-    
     return stateCopy;
 }
 

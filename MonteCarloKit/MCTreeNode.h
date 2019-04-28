@@ -1,6 +1,6 @@
 //
-//  PSMapNode.h
-//  MCTSNav
+//  MCTreeNode.h
+//  MonteCarloKit
 //
 //  Created by Philipp Schunker on 17.10.18.
 //  Copyright © 2018 Philipp Schunker. All rights reserved.
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //@property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSString *nid;
-@property (nonatomic,strong) MCTreeNode *parentNode;
+@property (nonatomic,weak) MCTreeNode *parentNode;
 @property (nonatomic,strong) NSMutableArray<MCTreeNode *> *nodes;
 
 -(NSMutableArray<MCTreeNode *> *)addNode:(MCTreeNode *)node;

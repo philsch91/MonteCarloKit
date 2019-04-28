@@ -1,6 +1,6 @@
 //
 //  MCTS.h
-//  MCTSNav
+//  MonteCarloKit
 //
 //  Created by Philipp Schunker on 04.11.18.
 //  Copyright © 2018 Philipp Schunker. All rights reserved.
@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) double explorationCoefficient;
 @property (nonatomic,assign) double exploitationCoefficient;
 @property (nonatomic,assign) BOOL *pStopFlag;
-@property (nonatomic,strong) id<MCStateDelegate> stateDelegate;
+@property (nonatomic,weak) id<MCStateDelegate> stateDelegate;
 @property (nonatomic,assign) BOOL debug;
 
 @end

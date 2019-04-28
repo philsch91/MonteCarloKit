@@ -1,6 +1,6 @@
 //
 //  MCTS.m
-//  MCTSNav
+//  MonteCarloKit
 //
 //  Created by Philipp Schunker on 04.11.18.
 //  Copyright © 2018 Philipp Schunker. All rights reserved.
@@ -87,7 +87,7 @@
             cnode = [self expand:cnode maxdepth:maxdepth depth:(depth+1) lastNodes:nextVisitedNodes];
         }
         
-        cnode.parentNode = node;
+        //cnode.parentNode = node;  //implemented in [node.addNode]
         [node addNode:cnode];
     }
     
