@@ -20,11 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 //-(double)uct:(double)numerator denominator:(double)denominator;
 -(double)uct:(double)numerator denominator:(double)denominator parentDenominator:(double)pd;
 
--(MCTreeNode *)expand:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth lastNodes:(NSArray *)lastNodes;
+-(NSMutableArray<MCTreeNode *>*)expand:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth prevNodes:(NSArray *)prevNodes;
 
 -(MCTreeNode *)selection:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes;
 
--(NSMutableArray<MCTreeNode *>*)expansion:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes;
+//-(NSMutableArray<MCTreeNode *>*)expansion:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes;
 
 -(MCTreeNode *)simulation:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth lastNodes:(NSArray *)lastNodes;
 
