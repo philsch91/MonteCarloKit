@@ -24,8 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(MCTreeNode *)selection:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes;
 
-//-(NSMutableArray<MCTreeNode *>*)expansion:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes;
-
 -(MCTreeNode *)simulation:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth lastNodes:(NSArray *)lastNodes;
 
 -(void)main;

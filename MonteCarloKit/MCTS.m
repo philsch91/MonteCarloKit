@@ -26,18 +26,21 @@
 
 -(instancetype)init:(MCTreeNode *)startNode simulationCount:(NSUInteger)maxSimCount{
     self = [super init];
-    if(self){
-        self.startNode = startNode;
-        
-        self.simDepth = INFINITY;
-        self.maxSimCount = maxSimCount;
-        
-        self.explorationCoefficient = 2;
-        self.exploitationCoefficient = 1;
-        
-        self.stopFlag = NO;
-        self.pStopFlag = &_stopFlag;
+    
+    if(!self){
+        return nil;
     }
+    
+    self.startNode = startNode;
+    
+    self.simDepth = INFINITY;
+    self.maxSimCount = maxSimCount;
+    
+    self.explorationCoefficient = 2;
+    self.exploitationCoefficient = 1;
+    
+    self.stopFlag = NO;
+    self.pStopFlag = &_stopFlag;
     
     return self;
 }
@@ -46,7 +49,7 @@
     double exploitation = numerator;
     double exploration = 0;
     
-    if(denominator==0){
+    if(denominator == 0){
         return DBL_MAX;
     }
     /*
@@ -200,7 +203,7 @@
     [lastNodes addObject:node];
     
     NSUInteger depth = 0;
-    while(depth < maxdepth){
+    while(depth < maxdepth && !(*self.pStopFlag)){
         NSUInteger oldNodeCount = [node.nodes count];
         [self expand:node maxdepth:0 depth:depth prevNodes:lastNodes];
         NSUInteger newNodeCount = [node.nodes count];
@@ -210,11 +213,9 @@
         }
         
         NSMutableArray<MCTreeNode *>* childNodes = node.nodes;
-        MCTreeNode *nextNode = childNodes[arc4random_uniform([childNodes count])];
-        node = nextNode;
+        node = childNodes[arc4random_uniform([childNodes count])];
         
         [lastNodes addObject:node];
-        
         depth++;
     }
     
@@ -258,10 +259,9 @@
     //NSLog(@"initial value: %g m",initVal);
     
     self.simCount = 0;
-    while(self.simCount<self.maxSimCount && !(*self.pStopFlag)){
+    while(self.simCount < self.maxSimCount && !(*self.pStopFlag)){
         //NSLog(@"start %ld",self.simCount);
         NSMutableArray *pnodes = [[NSMutableArray alloc] init];
-        //PSTreeNode *currentNode = [self selectionRec:self.startNode prevNodes:pnodes level:0];
         MCTreeNode *currentNode = [self selection:self.startNode prevNodes:pnodes];
         
         //===== expansion =====
