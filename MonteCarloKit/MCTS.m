@@ -82,7 +82,7 @@
     [pnodes addObject:nextNode];    //important
     
     NSUInteger i = 0;
-    while([nextNode.nodes count]>0){
+    while([nextNode.nodes count] > 0){
         //NSLog(@"nextNode %@ %ld",nextNode.nid,i);
         
         NSArray<MCTreeNode *> *childNodes = nextNode.nodes;
@@ -154,7 +154,7 @@
     
     NSArray<MCTreeNode *> *childNodes = [self.stateDelegate getStateUpdatesForNode:node depth:depth];
     
-    for(NSUInteger ix=0;ix<[childNodes count];ix++){
+    for(NSUInteger ix = 0;ix < [childNodes count];ix++){
         MCTreeNode *cnode = childNodes[ix];
         //NSLog(@"%ld %@",ix,cnode.nid);
         
@@ -182,7 +182,7 @@
         }
         */
         
-        if((depth+1)<maxdepth){
+        if((depth+1) < maxdepth){
             [visitedNodes addObject:cnode];
             //NSArray *nextVisitedNodes = [visitedNodes arrayByAddingObject:destinationNode];
             NSArray *nextVisitedNodes = [visitedNodes copy];
@@ -212,7 +212,7 @@
             return node;
         }
         
-        NSMutableArray<MCTreeNode *>* childNodes = node.nodes;
+        NSMutableArray<MCTreeNode *> *childNodes = node.nodes;
         node = childNodes[arc4random_uniform([childNodes count])];
         
         [lastNodes addObject:node];
@@ -269,7 +269,7 @@
         //if(currentNode.denominator != 0 || [currentNode isEqual:self.startNode]){
             [self expand:currentNode maxdepth:0 depth:0 prevNodes:pnodes];
             //NSLog(@"currentNode.nodes %ld",[currentNode.nodes count]);
-            if([currentNode.nodes count]>0){
+            if([currentNode.nodes count] > 0){
                 //currentNode = currentNode.nodes[0];
                 currentNode = currentNode.nodes[arc4random_uniform([currentNode.nodes count])];
             }
