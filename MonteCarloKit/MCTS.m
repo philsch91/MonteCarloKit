@@ -135,16 +135,6 @@
     return nextNode;
 }
 
--(NSMutableArray<MCTreeNode *>*)expansion:(MCTreeNode *)node prevNodes:(NSMutableArray *)pnodes{
-    NSMutableArray<MCTreeNode *> *cnodes = [self expand:node maxdepth:0 depth:0 prevNodes:pnodes];
- 
-    if ([cnodes count] == 0) {
-        return nil;
-    }
- 
-    return node.nodes;
-}
-
 -(NSMutableArray<MCTreeNode *>*)expand:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth prevNodes:(NSArray *)prevNodes{
     if(self.debug){
         NSLog(@"expand %@",node.nid);
@@ -248,16 +238,6 @@
 }
 
 -(void)main{
-    //PSTreeNode *currentNode = self.startNode;
-    //expand root node first
-    
-    //double initVal = [self.startLocation distanceFromLocation:self.endLocation];
-    //double initVal = [self.startNode compareToState:self.endNode];
-    //double bestVal = initVal;
-    //double *pBestVal = &bestVal;
-
-    //NSLog(@"initial value: %g m",initVal);
-    
     self.simCount = 0;
     while(self.simCount < self.maxSimCount && !(*self.pStopFlag)){
         //NSLog(@"start %ld",self.simCount);
@@ -265,8 +245,8 @@
         MCTreeNode *currentNode = [self selection:self.startNode prevNodes:pnodes];
         
         //===== expansion =====
-        if(currentNode.denominator != 0){
         //if(currentNode.denominator != 0 || [currentNode isEqual:self.startNode]){
+        if(currentNode.denominator != 0){
             [self expand:currentNode maxdepth:0 depth:0 prevNodes:pnodes];
             //NSLog(@"currentNode.nodes %ld",[currentNode.nodes count]);
             if([currentNode.nodes count] > 0){
@@ -294,14 +274,6 @@
         //==========
         
         //===== backpropagation =====
-        /*
-        for(PSTreeNode *prevNode in pnodes){
-            //NSLog(@"backpropagation");
-            //prevNode.numerator = prevNode.numerator/currentNode.numerator;     //higher is better
-            prevNode.numerator=prevNode.numerator+numerator;
-            prevNode.denominator++;
-        }
-        */
         [self backpropagation:currentNode numerator:numerator];
         //==========
         
