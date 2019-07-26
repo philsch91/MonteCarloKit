@@ -36,8 +36,8 @@
     self.simDepth = INFINITY;
     self.maxSimCount = maxSimCount;
     
-    self.explorationCoefficient = 2;
     self.exploitationCoefficient = 1;
+    self.explorationCoefficient = 2;
     
     self.stopFlag = NO;
     self.pStopFlag = &_stopFlag;
@@ -58,14 +58,14 @@
      //exploration = sqrt(2.0f) * sqrt((log(self.simCount)/denominator));
     }
     */
-    exploitation = exploitation/denominator * self.exploitationCoefficient;
+    exploitation = (exploitation/denominator) * self.exploitationCoefficient;
     //exploration = sqrt(2.0f) * sqrt((log(self.simCount)/denominator));
     //exploration = sqrt(2.0f) * sqrt((log(pd)/denominator));
     exploration = self.explorationCoefficient * sqrt((log(pd)/denominator));
     //NSLog(@"exploitaton %g",exploitation);
     //NSLog(@"exploration %g",exploration);
     
-    double result = exploitation+exploration;
+    double result = exploitation + exploration;
     return result;
 }
 
@@ -231,7 +231,7 @@
     if(value > initVal){
         if(value > *bestVal){
             numerator++;
-            *bestVal=value;
+            *bestVal = value;
         }
     }
     
@@ -326,7 +326,7 @@
     }
     
     NSArray<MCTreeNode *> *childNodes = node.nodes;
-    if([childNodes count]==0){
+    if([childNodes count] == 0){
         return nextNode;
     }
     
