@@ -212,23 +212,6 @@
     return node;
 }
 
-
--(double)evaluate:(MCTreeNode *)currentNode toNode:(MCTreeNode *)destinationNode withInitValue:(double)initVal AndBestValue:(double *)bestVal{
-    
-    double value = [currentNode compareToState:destinationNode];
-    double numerator = 0;
-    
-    if(value > initVal){
-        if(value > *bestVal){
-            numerator++;
-            *bestVal = value;
-        }
-    }
-    
-    return numerator;
-}
-
-
 -(void)backpropagation:(MCTreeNode *)node numerator:(double)value{
     while(node != nil){
         node.numerator = node.numerator + value;
@@ -254,7 +237,6 @@
                 currentNode = currentNode.nodes[arc4random_uniform([currentNode.nodes count])];
             }
         }
-        //==========
         
         //===== simulation =====
         /*
@@ -266,16 +248,12 @@
         
         //PSTreeNode *simNode = [self simulation:copyNode maxdepth:self.simDepth depth:0 lastNodes:[NSMutableArray array]];
         MCTreeNode *simNode = [self simulation:copyNode maxdepth:self.simDepth];
-        //==========
         
         //===== evaluation =====
-        //double numerator = [self evaluate:currentNode toNode:simNode withInitValue:initVal AndBestValue:pBestVal];
         double numerator = [self.stateDelegate evaluate:currentNode withNode:simNode];
-        //==========
         
         //===== backpropagation =====
         [self backpropagation:currentNode numerator:numerator];
-        //==========
         
         self.simCount++;
     }
@@ -361,7 +339,7 @@
     [allNodes addObject:nextNode];
     NSArray *copyNodes = [allNodes copy];
     
-    if(depth<maxdepth){
+    if(depth < maxdepth){
         MCTreeNode *cnode = [self simulation:nextNode maxdepth:maxdepth depth:(depth+1) lastNodes:copyNodes];
         //[node addNode:cnode];
         //return node;
