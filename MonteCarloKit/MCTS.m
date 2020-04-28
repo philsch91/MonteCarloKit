@@ -126,6 +126,7 @@
             }
             
         }
+        
         [pnodes addObject:nextNode];    //important
         i++;
     }
@@ -276,6 +277,7 @@
     }
     
     NSArray<MCTreeNode *> *childNodes = node.nodes;
+    
     if([childNodes count] == 0){
         return nextNode;
     }
@@ -283,10 +285,12 @@
     parentNode = nextNode;
     nextNode = childNodes[0];
     NSUInteger jx = 1;
+    
     while([pnodes containsObject:nextNode] && jx < [childNodes count]){
         nextNode = childNodes[jx];
         jx++;
     }
+    
     if([pnodes containsObject:nextNode]){
         return node;
     }
@@ -327,9 +331,11 @@
 -(MCTreeNode *)simulation:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth lastNodes:(NSArray *)lastNodes{
     //important: simulate a playout only with a copy node
     NSMutableArray *nodes = [self expand:node maxdepth:0 depth:0 prevNodes:lastNodes];
+    
     if([nodes count] == 0){
         return node;
     }
+    
     NSMutableArray<MCTreeNode *>* childNodes = node.nodes;
     MCTreeNode *nextNode = childNodes[arc4random_uniform([childNodes count])];
     //if(depth>=maxdepth){ return nextNode; };

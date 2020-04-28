@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import "MCTreeNode.h"
 #import "MCStateDelegate.h"
 
@@ -30,7 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) BOOL debug;
 
 -(instancetype)init:(MCTreeNode *)startNode simulationCount:(NSUInteger)maxSimCount;
-
 //-(double)uct:(double)numerator denominator:(double)denominator;
 -(double)uct:(double)numerator denominator:(double)denominator parentDenominator:(double)pd;
 -(NSMutableArray<MCTreeNode *>*)expand:(MCTreeNode *)node maxdepth:(NSUInteger)maxdepth depth:(NSUInteger)depth prevNodes:(NSArray *)prevNodes;

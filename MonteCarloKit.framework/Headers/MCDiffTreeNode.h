@@ -6,7 +6,8 @@
 //  Copyright © 2019 Philipp Schunker. All rights reserved.
 //
 
-#import <MonteCarloKit/MonteCarloKit.h>
+#import <Foundation/Foundation.h>
+#import "MCTreeNode.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

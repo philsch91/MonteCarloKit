@@ -6,7 +6,7 @@
 //  Copyright © 2019 Philipp Schunker. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for MonteCarloKit.
 FOUNDATION_EXPORT double MonteCarloKitVersionNumber;
