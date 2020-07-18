@@ -20,20 +20,23 @@
 #pragma mark - IGListDiffable and IGListSectionController
  
 -(BOOL)isEqualToDiffableObject:(id)object {
-    //the quickest way to get started with diffable models is use the object itself as the identifier, and use the superclass’s -[NSObject isEqual:] implementation for equality
-    //return [self isEqual:object];     //override NSObject methods
+    /**
+     the quickest way to get started with diffable models is use the object itself as the identifier, and use the superclass’s -[NSObject isEqual:] implementation for equality
+     override NSObject methods
+     return [self isEqual:object];
+     */
  
-    if(object == self){
+    if (object == self) {
         return YES;
     }
  
-    if(![object isKindOfClass:[MCTreeNode class]]){
+    if (![object isKindOfClass:[MCTreeNode class]]) {
         return NO;
     }
  
     MCTreeNode *node = object;
  
-    return [self.nid isEqualToString:node.nid]
+    return [self isEqual:object]
         && self.parentNode == node.parentNode
         && [self.nodes isEqual:node.nodes];
 }

@@ -18,12 +18,6 @@
 
 @implementation MCTS
 
-/*
--(instancetype)init{
-    self = [super init];
-    return self;
-}*/
-
 -(instancetype)init:(MCTreeNode *)startNode simulationCount:(NSUInteger)maxSimCount{
     self = [super init];
     
@@ -247,7 +241,6 @@
         
         MCTreeNode *copyNode = [currentNode copy];
         
-        //PSTreeNode *simNode = [self simulation:copyNode maxdepth:self.simDepth depth:0 lastNodes:[NSMutableArray array]];
         MCTreeNode *simNode = [self simulation:copyNode maxdepth:self.simDepth];
         
         //===== evaluation =====
@@ -298,11 +291,10 @@
     for(MCTreeNode *cnode in childNodes){
         //&& ![pnodes containsObject:cnode]
         /*
-         if(cnode.denominator>nextNode.denominator && ![pnodes containsObject:cnode]){
-         NSLog(@"set new node");
-         nextNode=cnode;
-         }
-         */
+        if(cnode.denominator>nextNode.denominator && ![pnodes containsObject:cnode]){
+            NSLog(@"set new node");
+            nextNode=cnode;
+        } */
         
         double uctNode = [self uct:cnode.numerator denominator:cnode.denominator parentDenominator:parentNode.denominator];
         double uctNextNode = [self uct:nextNode.numerator denominator:nextNode.denominator parentDenominator:parentNode.denominator];
@@ -314,9 +306,10 @@
         
     }
     
-    //if(![pnodes containsObject:nextNode]){
-    //[pnodes addObject:nextNode];
-    //}
+    /*
+    if(![pnodes containsObject:nextNode]){
+        [pnodes addObject:nextNode];
+    } */
     [pnodes addObject:nextNode];
     
     if([nextNode.nodes count]){
@@ -338,7 +331,7 @@
     
     NSMutableArray<MCTreeNode *>* childNodes = node.nodes;
     MCTreeNode *nextNode = childNodes[arc4random_uniform([childNodes count])];
-    //if(depth>=maxdepth){ return nextNode; };
+    //if(depth >= maxdepth){ return nextNode; };
     //return [self simulation:nextNode maxdepth:maxdepth depth:(depth+1) lastNodes:lastNodes];
     NSMutableArray *allNodes = [[NSMutableArray alloc] init];
     [allNodes addObjectsFromArray:lastNodes];

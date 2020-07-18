@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MonteCarloKitAppTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>MonteCarloKitDemoApp.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>MonteCarloKitUniversal.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +27,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>172C544B24C346D00032A29F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>172C546324C34C530032A29F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>177FCD7E223A8FCA00034560</key>
 		<dict>
 			<key>primary</key>

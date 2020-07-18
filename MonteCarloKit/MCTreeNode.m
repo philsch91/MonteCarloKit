@@ -77,6 +77,14 @@
     return _nodes;
 }
 
+/*
+-(NSString *)name{
+    if(!_name){
+        _name = [[NSString alloc] initWithString:@""];
+    }
+    return _name;
+} */
+
 #pragma mark - public methods
 
 -(NSMutableArray<MCTreeNode *> *)addNode:(MCTreeNode *)node{
@@ -98,14 +106,5 @@
     node->_nodes = [[NSMutableArray alloc] initWithArray:_nodes copyItems:YES];
     return node;
 }
-
-/*
--(NSString *)name{
-    if(!_name){
-        _name = [[NSString alloc] initWithString:@""];
-    }
-    return _name;
-}
-*/
 
 @end

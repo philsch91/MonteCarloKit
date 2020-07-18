@@ -37,10 +37,11 @@
 #pragma mark - NSCopying
 
 -(id)copyWithZone:(NSZone *)zone{
-    /*
+    /**
      * NSObject does not itself support the NSCopying protocol.
      * Subclasses must support the protocol and implement the copyWithZone: method.
-     * A subclass version of the copyWithZone: method should send the message to super first, to incorporate its implementation, unless the subclass descends directly from NSObject.
+     * A subclass version of the copyWithZone: method should send the message to super first, to incorporate its
+     * implementation, unless the subclass descends directly from NSObject.
      */
     
     MCState *stateCopy = [[[self class] allocWithZone:zone] init];
@@ -51,7 +52,9 @@
     return stateCopy;
 }
 
-//override in subclass
+/**
+ override in subclass
+ */
 -(double)compareToState:(MCState *)state{
     return 0;
 }

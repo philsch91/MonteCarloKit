@@ -21,6 +21,15 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		172C544F24C346D00032A29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172C544E24C346D00032A29F /* AppDelegate.swift */; };
+		172C545124C346D00032A29F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172C545024C346D00032A29F /* SceneDelegate.swift */; };
+		172C545324C346D00032A29F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172C545224C346D00032A29F /* ViewController.swift */; };
+		172C545824C346D30032A29F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172C545724C346D30032A29F /* Assets.xcassets */; };
+		172C545B24C346D30032A29F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172C545924C346D30032A29F /* LaunchScreen.storyboard */; };
+		172C546724C34C530032A29F /* MonteCarloKitAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172C546624C34C530032A29F /* MonteCarloKitAppTests.swift */; };
+		172C546924C34C530032A29F /* MonteCarloKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177FCD7F223A8FCA00034560 /* MonteCarloKit.framework */; };
+		172C547424C363300032A29F /* MonteCarloKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17ECD16524C32A73000C7284 /* MonteCarloKit.framework */; };
+		172C547524C363300032A29F /* MonteCarloKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17ECD16524C32A73000C7284 /* MonteCarloKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		174BD97F224972C600C7D48A /* MCDiffTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 174BD97D224972C600C7D48A /* MCDiffTreeNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		174BD980224972C600C7D48A /* MCDiffTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BD97E224972C600C7D48A /* MCDiffTreeNode.m */; };
 		177FCD84223A8FCA00034560 /* MonteCarloKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 177FCD82223A8FCA00034560 /* MonteCarloKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,7 +42,43 @@
 		177FCDA1223A9E4400034560 /* MCState.m in Sources */ = {isa = PBXBuildFile; fileRef = 177FCD9F223A9E4400034560 /* MCState.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		172C546A24C34C530032A29F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 177FCD76223A8FC900034560 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 177FCD7E223A8FCA00034560;
+			remoteInfo = MonteCarloKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		172C547624C363300032A29F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				172C547524C363300032A29F /* MonteCarloKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		172C544C24C346D00032A29F /* MonteCarloKitDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonteCarloKitDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		172C544E24C346D00032A29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		172C545024C346D00032A29F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		172C545224C346D00032A29F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		172C545724C346D30032A29F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		172C545A24C346D30032A29F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		172C545C24C346D30032A29F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		172C546424C34C530032A29F /* MonteCarloKitAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonteCarloKitAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		172C546624C34C530032A29F /* MonteCarloKitAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonteCarloKitAppTests.swift; sourceTree = "<group>"; };
+		172C546824C34C530032A29F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		172C546F24C34D7D0032A29F /* MonteCarloKitAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonteCarloKitAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		172C547024C352460032A29F /* MonteCarloKitDemoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonteCarloKitDemoApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		174BD97D224972C600C7D48A /* MCDiffTreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCDiffTreeNode.h; sourceTree = "<group>"; };
 		174BD97E224972C600C7D48A /* MCDiffTreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCDiffTreeNode.m; sourceTree = "<group>"; };
 		177FCD7F223A8FCA00034560 /* MonteCarloKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MonteCarloKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,9 +91,26 @@
 		177FCD9C223A9B0E00034560 /* MCStateDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCStateDelegate.h; sourceTree = "<group>"; };
 		177FCD9E223A9E4400034560 /* MCState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCState.h; sourceTree = "<group>"; };
 		177FCD9F223A9E4400034560 /* MCState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCState.m; sourceTree = "<group>"; };
+		17ECD16524C32A73000C7284 /* MonteCarloKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MonteCarloKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		172C544924C346D00032A29F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172C547424C363300032A29F /* MonteCarloKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172C546124C34C530032A29F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172C546924C34C530032A29F /* MonteCarloKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		177FCD7C223A8FCA00034560 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,11 +121,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		172C544D24C346D00032A29F /* MonteCarloKitDemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				172C544E24C346D00032A29F /* AppDelegate.swift */,
+				172C545024C346D00032A29F /* SceneDelegate.swift */,
+				172C545224C346D00032A29F /* ViewController.swift */,
+				172C545724C346D30032A29F /* Assets.xcassets */,
+				172C545924C346D30032A29F /* LaunchScreen.storyboard */,
+				172C545C24C346D30032A29F /* Info.plist */,
+				172C547024C352460032A29F /* MonteCarloKitDemoApp-Bridging-Header.h */,
+			);
+			path = MonteCarloKitDemoApp;
+			sourceTree = "<group>";
+		};
+		172C546524C34C530032A29F /* MonteCarloKitAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				172C546624C34C530032A29F /* MonteCarloKitAppTests.swift */,
+				172C546824C34C530032A29F /* Info.plist */,
+				172C546F24C34D7D0032A29F /* MonteCarloKitAppTests-Bridging-Header.h */,
+			);
+			path = MonteCarloKitAppTests;
+			sourceTree = "<group>";
+		};
 		177FCD75223A8FC900034560 = {
 			isa = PBXGroup;
 			children = (
 				177FCD81223A8FCA00034560 /* MonteCarloKit */,
+				172C544D24C346D00032A29F /* MonteCarloKitDemoApp */,
+				172C546524C34C530032A29F /* MonteCarloKitAppTests */,
 				177FCD80223A8FCA00034560 /* Products */,
+				17ECD16424C32A73000C7284 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				177FCD7F223A8FCA00034560 /* MonteCarloKit.framework */,
+				172C544C24C346D00032A29F /* MonteCarloKitDemoApp.app */,
+				172C546424C34C530032A29F /* MonteCarloKitAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +184,14 @@
 			path = MonteCarloKit;
 			sourceTree = "<group>";
 		};
+		17ECD16424C32A73000C7284 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17ECD16524C32A73000C7284 /* MonteCarloKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -112,6 +211,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		172C544B24C346D00032A29F /* MonteCarloKitDemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 172C545D24C346D30032A29F /* Build configuration list for PBXNativeTarget "MonteCarloKitDemoApp" */;
+			buildPhases = (
+				172C544824C346D00032A29F /* Sources */,
+				172C544924C346D00032A29F /* Frameworks */,
+				172C544A24C346D00032A29F /* Resources */,
+				172C547624C363300032A29F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonteCarloKitDemoApp;
+			productName = MonteCarloKitDemoApp;
+			productReference = 172C544C24C346D00032A29F /* MonteCarloKitDemoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		172C546324C34C530032A29F /* MonteCarloKitAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 172C546C24C34C530032A29F /* Build configuration list for PBXNativeTarget "MonteCarloKitAppTests" */;
+			buildPhases = (
+				172C546024C34C530032A29F /* Sources */,
+				172C546124C34C530032A29F /* Frameworks */,
+				172C546224C34C530032A29F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				172C546B24C34C530032A29F /* PBXTargetDependency */,
+			);
+			name = MonteCarloKitAppTests;
+			productName = MonteCarloKitAppTests;
+			productReference = 172C546424C34C530032A29F /* MonteCarloKitAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		177FCD7E223A8FCA00034560 /* MonteCarloKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 177FCD87223A8FCA00034560 /* Build configuration list for PBXNativeTarget "MonteCarloKit" */;
@@ -136,9 +271,16 @@
 		177FCD76223A8FC900034560 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Philipp Schunker";
 				TargetAttributes = {
+					172C544B24C346D00032A29F = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					172C546324C34C530032A29F = {
+						CreatedOnToolsVersion = 11.3;
+					};
 					177FCD7E223A8FCA00034560 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -153,6 +295,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 177FCD75223A8FC900034560;
 			productRefGroup = 177FCD80223A8FCA00034560 /* Products */;
@@ -161,11 +304,29 @@
 			targets = (
 				177FCD7E223A8FCA00034560 /* MonteCarloKit */,
 				177FCDBD223D776000034560 /* MonteCarloKitUniversal */,
+				172C544B24C346D00032A29F /* MonteCarloKitDemoApp */,
+				172C546324C34C530032A29F /* MonteCarloKitAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		172C544A24C346D00032A29F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172C545B24C346D30032A29F /* LaunchScreen.storyboard in Resources */,
+				172C545824C346D30032A29F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172C546224C34C530032A29F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		177FCD7D223A8FCA00034560 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,6 +357,24 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		172C544824C346D00032A29F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172C545324C346D00032A29F /* ViewController.swift in Sources */,
+				172C544F24C346D00032A29F /* AppDelegate.swift in Sources */,
+				172C545124C346D00032A29F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172C546024C34C530032A29F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172C546724C34C530032A29F /* MonteCarloKitAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		177FCD7B223A8FCA00034560 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,7 +388,124 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		172C546B24C34C530032A29F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 177FCD7E223A8FCA00034560 /* MonteCarloKit */;
+			targetProxy = 172C546A24C34C530032A29F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		172C545924C346D30032A29F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				172C545A24C346D30032A29F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		172C545E24C346D30032A29F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BR2M9RRNF6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = MonteCarloKitDemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = at.ps.MonteCarloKitDemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "MonteCarloKitDemoApp/MonteCarloKitDemoApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		172C545F24C346D30032A29F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BR2M9RRNF6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = MonteCarloKitDemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.ps.MonteCarloKitDemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "MonteCarloKitDemoApp/MonteCarloKitDemoApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		172C546D24C34C530032A29F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BR2M9RRNF6;
+				INFOPLIST_FILE = MonteCarloKitAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = at.ps.MonteCarloKitAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "MonteCarloKitAppTests/MonteCarloKitAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		172C546E24C34C530032A29F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BR2M9RRNF6;
+				INFOPLIST_FILE = MonteCarloKitAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.ps.MonteCarloKitAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "MonteCarloKitAppTests/MonteCarloKitAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		177FCD85223A8FCA00034560 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -268,6 +564,8 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -325,7 +623,9 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -403,6 +703,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		172C545D24C346D30032A29F /* Build configuration list for PBXNativeTarget "MonteCarloKitDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172C545E24C346D30032A29F /* Debug */,
+				172C545F24C346D30032A29F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		172C546C24C34C530032A29F /* Build configuration list for PBXNativeTarget "MonteCarloKitAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172C546D24C34C530032A29F /* Debug */,
+				172C546E24C34C530032A29F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		177FCD79223A8FC900034560 /* Build configuration list for PBXProject "MonteCarloKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
