@@ -63,23 +63,7 @@ class MonteCarloKitAppTests: XCTestCase {
     }
     
     func testChildNodes2() {
-        let node = MCTreeNode()
-        node.nid = "0"
-        
-        let node1 = MCTreeNode()
-        node1.nid = "1"
-        
-        let node2 = MCTreeNode()
-        node2.nid = "2"
-        
-        node1.addNode(node2)
-        
-        let node3 = MCTreeNode()
-        node3.nid = "3"
-        
-        node.addNode(node1)
-        node.addNode(node3)
-        
+        let node = self.createTree()
         NSLog("%@ %@", node.nid, node)
         
         guard let nodes = node.nodes as? [MCTreeNode] else {
@@ -109,77 +93,69 @@ class MonteCarloKitAppTests: XCTestCase {
         XCTAssertEqual(childNodeCount, 1, "count of child's nodes child nodes must be 1")
     }
     
+    func testChildNodesRecursive() {
+        let node = self.createTree()
+        let count = self.countNodes(node)
+        print("testChildNodesRecursive count: \(count)")
+
+        XCTAssertEqual(count, 4, "count of nodes must be 4")
+    }
+
+    func testChildNodesRecursive2() {
+        let node = self.createTree()
+        let childNode3 = node.nodes[1] as! MCTreeNode
+        
+        let childNode4 = MCTreeNode()
+        childNode4.nid = "4"
+        
+        childNode3.addNode(childNode4)
+        NSLog("childNode4.parent: %@", childNode4.parent ?? "nil")
+        
+        let count = self.countNodes(node)
+        print("testChildNodesRecursive2 count: \(count)")
+
+        XCTAssertEqual(count, 5, "count of nodes must be 5")
+    }
+
     func testNodeCopy() {
-        let node = MCTreeNode()
-        node.nid = "0"
-        
-        let node1 = MCTreeNode()
-        node1.nid = "1"
-        
-        let node2 = MCTreeNode()
-        node2.nid = "2"
-        
-        node1.addNode(node2)
-        
-        let node3 = MCTreeNode()
-        node3.nid = "3"
-        
-        node.addNode(node1)
-        node.addNode(node3)
-        
+        let node = self.createTree()
         NSLog("node: %@ %@", node.nid, node)
         
         print("---")
         
-        let copyNode = node.copy() as! MCTreeNode
-        NSLog("node copy: %@ %@", copyNode.nid, copyNode)
-        
-        //1
-        print(node === copyNode)
-        //2
-        let cnode1 = node.nodes[0] as! MCTreeNode
-        let cnode2 = copyNode.nodes[0] as! MCTreeNode
-        print(cnode1 === cnode2)
-        //3
-        let ccnode1 = cnode1.nodes[0] as! MCTreeNode
-        let ccnode2 = cnode2.nodes[0] as! MCTreeNode
-        print(ccnode1 === ccnode2)
-        
-        XCTAssertEqual(node.isEqual(copyNode) && cnode1.isEqual(cnode2) && ccnode1.isEqual(ccnode2), true, "node copies are equal")
-    }
-    
-    func testNodeCopy2() {
-        let node = MCTreeNode()
-        node.nid = "0"
-        
-        let node1 = MCTreeNode()
-        node1.nid = "1"
-        
-        let node2 = MCTreeNode()
-        node2.nid = "2"
-        
-        node1.addNode(node2)
-        
-        let node3 = MCTreeNode()
-        node3.nid = "3"
-        
-        node.addNode(node1)
-        node.addNode(node3)
-        
-        NSLog("node: %@ %@", node.nid, node)
-        
         let nodeCopy = node.copy() as! MCTreeNode
         NSLog("node copy: %@ %@", nodeCopy.nid, nodeCopy)
         
+        //1
+        print(node === nodeCopy)
+        //2
+        let childNode1 = node.nodes[0] as! MCTreeNode
+        let childNode1Copy = nodeCopy.nodes[0] as! MCTreeNode
+        print(childNode1 === childNode1Copy)
+        //3
+        let childNode2 = childNode1.nodes[0] as! MCTreeNode
+        let childNode2Copy = childNode1Copy.nodes[0] as! MCTreeNode
+        print(childNode2 === childNode2Copy)
+
+        XCTAssertEqual(node.isEqual(nodeCopy) && childNode1.isEqual(childNode1Copy) && childNode2.isEqual(childNode2Copy), true, "node copies are equal")
+    }
+
+    func testNodeCopyIds() {
+        let node = self.createTree()
+        NSLog("node: %@ %@", node.nid, node)
+
+        let nodeCopy = node.copy() as! MCTreeNode
+        NSLog("node copy: %@ %@", nodeCopy.nid, nodeCopy)
+
         let childNode = node.nodes[0] as! MCTreeNode
-        let childChildNode = childNode.nodes[0] as! MCTreeNode
-        print("childChildNode.nid: \(childChildNode.nid)")
-        
+        let childNode2 = childNode.nodes[0] as! MCTreeNode
+        print("childNode2.nid: \(childNode2.nid)")
+
         let childNodeCopy = nodeCopy.nodes[0] as! MCTreeNode
-        let childChildNodeCopy = childNodeCopy.nodes[0] as! MCTreeNode
-        print("childChildNodeCopy.nid: \(childChildNodeCopy.nid)")
-        
-        XCTAssertEqual(childNode.nid == childNodeCopy.nid && childChildNode.nid == childChildNodeCopy.nid, true, "node ids are equal")
+        let childNode2Copy = childNodeCopy.nodes[0] as! MCTreeNode
+        print("childNode2Copy.nid: \(childNode2Copy.nid)")
+
+        XCTAssertEqual(childNode.nid == childNodeCopy.nid && childNode2.nid == childNode2Copy.nid, true, "node ids are equal")
     }
 
     func testPerformanceExample() {
@@ -187,6 +163,42 @@ class MonteCarloKitAppTests: XCTestCase {
         measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func createTree() -> MCTreeNode {
+        let node = MCTreeNode()
+        node.nid = "0"
+        
+        let node1 = MCTreeNode()
+        node1.nid = "1"
+        
+        let node2 = MCTreeNode()
+        node2.nid = "2"
+        
+        node1.addNode(node2)
+        
+        let node3 = MCTreeNode()
+        node3.nid = "3"
+        
+        node.addNode(node1)
+        node.addNode(node3)
+        
+        return node
+    }
+
+    func countNodes(_ node: MCTreeNode) -> Int {
+        var count = 1
+
+        guard let nodes = node.nodes as? [MCTreeNode] else {
+            return count
+        }
+
+        for node in nodes {
+            count += countNodes(node)
+            //count += countNodes(node as! MCTreeNode)
+        }
+
+        return count
     }
 
 }
